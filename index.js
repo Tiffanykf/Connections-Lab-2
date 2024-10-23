@@ -1,18 +1,17 @@
-process.env.API-KEY
-process.env.MONGODB-URL
+// process.env.API-KEY
+// process.env.MONGODB-URL
 
 //DB - 0 - install and load lowdb module
 import express from 'express';
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 
+let app = express();
+
 let port = process.env.PORT || 3000;
 app.listen(port, () => {
 console.log('listening at ', port);
 });
-
-
-let app = express();
 
 
 //DB - 1 - connect to the DB
@@ -42,9 +41,9 @@ db.write()
 
 app.use('/', express.static('public'));
 
-app.listen(3000, ()=>{
-    console.log("listening at localhost:3000");
-})
+// app.listen(3000, ()=>{
+//     console.log("listening at localhost:3000");
+// })
 
 
 //3. add route to get all coffee tracking info
